@@ -1,0 +1,40 @@
+Server sends it's pos to client
+Client sends it's pos to server
+Both update on screen
+Extra thread for receiving
+
+1 thread for user input
+1 thread for draw update
+1 thread for recv
+1 thread for send
+1 thread for general updates
+
+DATA FORMAT
+-----------
+x y
+
+E.G.
+----
+126 90
+
+
+MAKING A THREAD
+---------------
+import threading
+
+def functionhere:
+	code here
+
+thread = threading.Thread(target=functionhere)
+thread.start()
+
+TO KILL IT
+----------
+thread.join()
+
+SO, BASIC RECV THREAD
+---------------------
+clientPos = s.recv(1024)
+clientPos = clientPos.split(" ")
+clientX = clientPos[0]
+clientY = clientPos[1]
